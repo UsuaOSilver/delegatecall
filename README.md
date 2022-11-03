@@ -16,7 +16,7 @@ cd-research-w3-delegatecall
 
 ## Problem
 
-Recently, I stumbled apon the max contract size problem. My contract reached roughly 27KB and I tried downsizing it by optimizing state variables and even attempted to split it into smaller contracts. In the process, I discovered EIP-2535 Diamonds, Multi-Facet Proxy and the use of `delegatecall`. In this article, I’ll go deeper into `delegatecall`.
+Recently, I stumbled apon the max contract size problem. My contract reached roughly 27KB and I tried downsizing it by optimizing state variables and even attempted to split it into smaller contracts. In the process, I discovered EIP-2535 Diamonds, Multi-Facet Proxy and the use of `delegatecall`. This article acts as an important piece in building a solid knowledge base, helps to prepare for the study of advanced smart contract architectures.
 
 ## Definition
 
@@ -38,13 +38,13 @@ When ContractA calls ContractB, ContractA executes its logic with functions from
 
 ## Best practice
 
-1. Do not execute untrusted malicious code. Since contract B has the ability to modify state vars of A, function code from B could destroy A by calling `selfdestruct`
+1. Do not execute untrusted malicious code. Since ContractB has the ability to modify state vars of ContractA, function code from ContractB could destroy ContractA by calling `selfdestruct`
 
 2. Do not call empty contract does not revert and will lead to bugs.
 
 3. The layout of both proxy and logic contracts must be the same. 
 
-- If A has uint at slot 0 and string at slot 1, while B has a string at slot 0 and byte32 at slot 1, the data will be updated incorrectly
+- If ContractA has uint at slot 0 and string at slot 1, while ContractB has a string at slot 0 and byte32 at slot 1, the data will be updated incorrectly
 - Make sure to have a thorough understanding of the storage layouts.
 
 ## Use cases
