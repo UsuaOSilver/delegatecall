@@ -20,18 +20,19 @@ Recently, I stumbled apon the max contract size problem. My contract reached rou
 
 ## Definition
 
-When ContractA calls ContractB, ContractA execute logic with functions from ContractB with ContractA’s context. More specifically, reads and writes to states variables happen to ContractA, never to ContractB, and functions executed with `delegatecall` have `address(this)`, `msg.sender`, `msg.value` unchanged.
+When ContractA calls ContractB, ContractA executes its logic with functions from ContractB within ContractA’s context. More specifically, reads and writes to states variables happen to ContractA only, never to ContractB, and functions executed with `delegatecall` have `address(this)`, `msg.sender`, `msg.value` unchanged.
 
-“delegatecall affects the state variables of the contract that calls a function with delegatecall. The state variables of the contract that holds the functions that are borrowed are not read or written.”
+> delegatecall affects the state variables of the contract that calls a function with delegatecall. The state variables of the contract that holds the functions that are borrowed are not read or written.
 
 ## Code explanation
 
 ## Common pitfall
-delegatecall in `fallback()` function
+
+### `delegatecall` in `fallback()` function
 
 
 
-Wrong layout between caller and callee contracts
+### Wrong layout between the caller and the callee contracts
 
 
 
@@ -49,19 +50,21 @@ Wrong layout between caller and callee contracts
 
 There are currently two smart contracts architectures that use delegatecall.
 
-1. OpenZeppelin Proxy Contracts
+### 1. OpenZeppelin Proxy Contracts
 
-2. EIP-2535 Diamonds
+### 2. EIP-2535 Diamonds
 
 ## Summary
 
 `delegatecall` opens smart contracts to loading code from other libraries during run time.
 
-Delegatecall makes contract’s storage implementation of reusable library code possible, allowing the development of a more complex data structure.
+`delegatecall` makes contract’s storage implementation of reusable library code possible, allowing the development of a more complex data structure.
 
 ## Sources
 
 https://eips.ethereum.org/EIPS/eip-2535
+
 https://coinsbench.com/unsafe-delegatecall-part-2-hack-solidity-5-94dd32a628c7
+
 https://coinsbench.com/unsafe-delegatecall-part-1-hack-solidity-5-81d5f295edb6
 
