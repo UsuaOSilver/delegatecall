@@ -43,6 +43,7 @@ When ContractA calls ContractB, ContractA executes its logic with functions from
 2. Do not call empty contract does not revert and will lead to bugs.
 
 3. The layout of both proxy and logic contracts must be the same. 
+
 - If A has uint at slot 0 and string at slot 1, while B has a string at slot 0 and byte32 at slot 1, the data will be updated incorrectly
 - Make sure to have a thorough understanding of the storage layouts.
 
