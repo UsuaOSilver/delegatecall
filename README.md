@@ -30,10 +30,14 @@ When ContractA calls ContractB, ContractA executes its logic with functions from
 
 ### `delegatecall` in `fallback()` function
 
+![image](https://user-images.githubusercontent.com/48362877/199662022-57e6b77c-bd3b-4129-ad08-23722f7a5d99.png)
+![image](https://user-images.githubusercontent.com/48362877/199662087-9ddb82ff-08ac-4eae-9e72-73934bd56c59.png)
 
 
 ### Wrong layout between the caller and the callee contracts
 
+![image](https://user-images.githubusercontent.com/48362877/199662152-8012ce53-c987-4ef2-8a56-1fa2b455abbc.png)
+![image](https://user-images.githubusercontent.com/48362877/199662518-e05a9a92-a786-4cef-84f6-af1309c8918c.png)
 
 
 ## Best practice
