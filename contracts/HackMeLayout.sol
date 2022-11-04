@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 
-contract Libre {
+contract Lib1 {
     uint public aNum;
     
     function doThis(uint _num) public {

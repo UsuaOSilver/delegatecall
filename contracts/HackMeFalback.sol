@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 
-contract Libre {
+contract Lib2 {
     address public owner;
     
     function setOwner() public {
@@ -11,11 +11,11 @@ contract Libre {
 
 contract HackMe {
     address public owner;
-    Libre public libre;
+    Lib2 public libre;
     
-    constructor(Libre _libre) {
+    constructor(Lib2 _libre) {
         owner = msg.sender;
-        libre = Libre(_libre);
+        libre = Lib2(_libre);
     }
     
     fallback() external payable {
