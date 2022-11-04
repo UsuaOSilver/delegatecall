@@ -5,7 +5,7 @@ contract Libre {
     address public owner;
     
     function setOwner() public {
-        owner msg.sender;
+        owner = msg.sender;
     }
 }
 
