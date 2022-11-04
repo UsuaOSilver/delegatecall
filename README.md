@@ -26,6 +26,10 @@ When ContractA calls ContractB, ContractA executes its logic with functions from
 
 ## Code explanation
 
+![image](https://user-images.githubusercontent.com/48362877/199665052-e144a806-60de-4034-ad21-2cc468848340.png)
+![image](https://user-images.githubusercontent.com/48362877/199664660-2c61ddd2-ebc5-4a6d-87b0-9f7564fc05a4.png)
+
+
 ## Common pitfall
 
 ### `delegatecall` in `fallback()` function
